@@ -34,6 +34,7 @@ const userController = {
 
             res.json(newUser);
         } catch (error) {
+          logger.error(`Error occurred: ${error.message}`);
             res.status(500).json({ error: "Internal Server Error" });
         }
     },
@@ -47,6 +48,7 @@ const userController = {
 
      
             if (!user) {
+              logger.error('User not found')
                 return res.status(400).json({ error: 'User not found' });
             }
 
@@ -62,6 +64,7 @@ const userController = {
 
             res.json({ message: 'Login successful' });
         } catch (error) {
+          logger.error(`Error occurred: ${error.message}`);
             res.status(500).json({ error: "Internal Server Error" });
         }
     },
@@ -75,6 +78,7 @@ const userController = {
           const toUser = await userModel.findById(toUserId);
 
           if (!fromUser || !toUser) {
+            logger.error('users not found')
               return res.status(400).json({ error: 'One or both users not found' });
           }
 
@@ -98,7 +102,7 @@ const userController = {
 
           res.json({ message: 'Transfer successful', transfer: transfer });
       } catch (error) {
-          console.error(error);
+        logger.error(`Error occurred: ${error.message}`);
           res.status(500).json({ error: "Internal Server Error" });
       }
   },
@@ -113,6 +117,7 @@ const userController = {
         const user = await userModel.findById(userId);
 
         if (!user) {
+          logger.error(`User not found with ID: ${userId}`);
             return res.status(400).json({ error: 'User not found' });
         }
 
@@ -123,7 +128,7 @@ const userController = {
 
         res.json({ user: user, transactions: transactions });
     } catch (error) {
-        console.error(error);
+      logger.error(`Error occurred: ${error.message}`);
         res.status(500).json({ error: "Internal Server Error" });
     }
 },
