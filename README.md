@@ -25,8 +25,9 @@ npm install
 2. start the server
  npm run dev
  Access the application through your web browser at http://localhost:5000.
+
 ## System Architecture
-  The SynthBank application is built using the following technologies:
+The SynthBank application is built using the following technologies:
 
 Frontend: HTML, CSS, JavaScript (React.js)
 Backend: Node.js (Express.js)
