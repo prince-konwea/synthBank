@@ -1,8 +1,18 @@
 import userModel from "../model/user.model.js";
 import transferModel from "../model/transfer.model.js";
 import bcrypt  from "bcryptjs";
+import winston from "winston"
 
 
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  transports: [
+      new winston.transports.File({ filename: 'error.log', level: 'error' }),
+      new winston.transports.File({ filename: 'combined.log' })
+  ]
+});
 
 const userController = {
     async register(req, res) {

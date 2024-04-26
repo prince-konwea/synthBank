@@ -5,7 +5,7 @@ const userRouter = Router()
 
 userRouter.post('/register', userController.register)
 userRouter.post('/login', userController.login)
-userRouter.post('transfer', userController.transfer)
-userRouter.get('/view-tansaction', userController.viewTransaction)
+userRouter.post('/transfer', userController.transfer)
+userRouter.get('/:userId/transactions', userController.viewTransaction)
 
 export default userRouter;
