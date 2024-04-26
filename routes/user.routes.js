@@ -7,6 +7,6 @@ const userRouter = Router()
 userRouter.post('/register', registerSchema, userController.register)
 userRouter.post('/login', loginSchema,  userController.login)
 userRouter.post('/transfer', transferSchema, userController.transfer)
-userRouter.get('/:userId/transactions',  viewTransactionSchema, userController.viewTransaction)
+userRouter.get('/:userId/transactions',  userController.viewTransaction)
 
 export default userRouter;

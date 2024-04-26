@@ -10,7 +10,7 @@ app.use(express.static('public'))
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use("/v1", routes)
-app.use(errorHandler);
+// app.use(errorHandler);
 
 
 app.get('/test', (req, res) => {
@@ -21,6 +21,6 @@ connectDB()
 
 const port = process.env.PORT
 
-  const server = app.listen(port, console.log(`server is listening on ${port}....`))
+ app.listen(port, console.log(`server is listening on ${port}....`))
 
-  export default server;
+  

@@ -19,7 +19,7 @@ export const transferSchema = (req, res, next) => {
 
   export const registerSchema = (req, res, next) => {
     const schema = Joi.object({
-        UserName: Joi.string().trim().required().label("User name"),
+        userName: Joi.string().trim().required().label("User name"),
         email: Joi.string().trim().email().lowercase().required().label("Email"),
         password: Joi.string().trim().required().label("Password"),
    
