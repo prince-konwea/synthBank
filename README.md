@@ -22,7 +22,7 @@ To use SynthBank, follow these steps:
 1. Install dependencies:
   ```bash
 npm install
-2. start the server
+ start the server
   ```bash
  npm run dev
  Access the application through your web browser at http://localhost:5000.
