@@ -21,4 +21,6 @@ connectDB()
 
 const port = process.env.PORT
 
-app.listen(port, console.log(`server is listening on ${port}....`))
+  const server = app.listen(port, console.log(`server is listening on ${port}....`))
+
+  export default server;
